@@ -19,6 +19,7 @@
     //
     // To do this, we'll create a wrapper class that manages
     // collections of Notes
+    // 
     var Bulletinboard = React.createClass({
       // Just like getDefaultProps, React will populate the this.state
       // property with the object returned from the getInitialState method.
@@ -26,6 +27,7 @@
       //
       // this.state is meant for data the component itself manages.
       // Any data the outside world controls should live in this.props.
+      // 
       getInitialState: function() {
         return {
           notes: [
@@ -45,12 +47,16 @@
       // the notes array into a Note component, then let JSX
       // construct the unordered list. To allow React to identify the
       // each li element separately, we pass it a unique key attribute.
+      // 
       render: function() {
         // We create a simple function to convert a single message
+        // 
         var toLineItem = function(msg, idx) {
           return <li key={ "idx-" + idx }><Note msg={ msg } /></li>;
         };
+        // 
         // ...and then use it when we map all the messages into actual components
+        // 
         return <ul>{ this.state.notes.map(toLineItem) }</ul>;
       }
     });
@@ -68,6 +74,7 @@
 
     // All we have to do is render the Bulletinboard component and
     // React will render the internal components for us!
+    // 
     React.render(
       <Bulletinboard />,
       document.getElementById('bulletinboard')
@@ -76,6 +83,7 @@
     // We can still use the Note component ourselves, or it could
     // be used by multiple React components in different places
     // throughout our app.
+    // 
     React.render(
       <Note />,
       document.getElementById('wall')
