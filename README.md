@@ -1,3 +1,9 @@
-* React Step-by-Step
+# React Step-by-Step
 
-Incremental series of React projects I'm creating as I explore [this framework](http://facebook.github.io/react/index.html).
+A heavily-annotated series of experimental apps as I explore the [React.js](http://facebook.github.io/react/index.html) framework.
+
+## The Steps
+
+1. [Hello World](tree/master/1-hello-world)
+1. [Dynamic Input Using Properties](tree/master/2-dynamic-input-with-properties)
+1. [Nesting Components](tree/master/3-nesting-components)
