@@ -13,3 +13,4 @@ A heavily-annotated series of experimental apps as I explore the [React.js](http
 * [React's 'Getting Started' Page](http://facebook.github.io/react/docs/getting-started.html)
 * Liam McLennan's [React Fundamentals](http://www.pluralsight.com/courses/react-fundamentals) course on [Pluralsight](http://www.pluralsight.com)
 * Hendrik Swanepoel's [video walkthrough](http://tagtree.tv/thinking-in-react) of the [Thinking in React](http://facebook.github.io/react/docs/thinking-in-react.html) blog post
+* The [JSX Compiler](https://facebook.github.io/react/jsx-compiler.html) page shows you the plain JS your JSX is translated into
