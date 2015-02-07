@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World in React</title>
+</head>
+<body>
+  <!-- The core React library -->
+  <script src="http://fb.me/react-0.12.2.js"></script>
+  <!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
+  <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+
+  <!--
+    Now we'll write our own React code.
+    To keep this as simple as possible, we're writing it
+    in the html file itself, which isn't the right way for
+    real apps, but we'll fix that in later versions.
+
+    Setting type to text/jsx allows React to parse our JSX before
+    trying to execute our JavaScript. The @jsx React.DOM comment
+    must be the first line of any script that contains JSX code.
+  -->
+  <script type="text/jsx">
+    /** @jsx React.DOM **/
+
+    // React is component-based. We create our own components
+    // using React.createClass. It accepts an object which must
+    // at a minimum include a render method that returns the
+    // widgetry React needs to render the component.
+    var Hello = React.createClass({
+      render: function() {
+        // Raw HTML in our JS? Wat?!?
+        // This is JSX, React's way of letting us avoid a bunch of
+        // calls to HTML-generation methods and just write something like
+        // plain HTML with superpowers.
+        // Instead, the JSXTransformer we included above will convert
+        // the line below into those methods at the last moment.
+        // As far as the browser is concerned, we wrote it that way ourselves. 
+        return <h1>Hello world from React!</h1>;
+      }
+    });
+
+    // Now that we have a component, we need to tell React to render (aka display)
+    // it on the page. React.render takes two args: the JSX for the component
+    // we want displayed, followed by the DOM wrapper element we want the
+    // component inserted.
+    // Here we're inserting it into the document body itself, but you can use
+    // document.getElementById and similar methods to grab whatever element
+    // you want.
+    // Notice that the JSX name of our new component matches the class we
+    // created above, including the capital H.
+    React.render(
+      <Hello />,
+      document.body
+    );
+
+    // If you open this file in a web browser, the JSXTransformer library
+    // we included above will convert all our JSX into valid JS, then it
+    // will run normally, creating the component and displaying it on the page.
+    // You should see "Hello world from React!" on the page.
+    // Congratulations! You're running React!
+  </script>
+</body>
+</html>

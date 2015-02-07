@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Input with Properties</title>
+</head>
+<body>
+  <!--
+    Normally we want to render components in certain spots on the page,
+    not overwrite the entire body, so this time we've added two wrapper
+    divs as destinations for our component.
+    We differentiate them using ids, so we can locate them later.
+  -->
+  <div id="bulletinboard1"></div>
+  <div id="bulletinboard2"></div>
+
+  <script src="http://fb.me/react-0.12.2.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+  <script type="text/jsx">
+    /** @jsx React.DOM **/
+
+    // What if we wanted a component that would display any message we
+    // asked it to? React allows us to pass information into our
+    // components via properties, which can be accessed via attributes
+    // in the tag, just like we set attributes like id and class in
+    // normal HTML tags.
+    var Note = React.createClass({
+      // This time our render method has active content.
+      // this.props refers to the props object every class gets
+      // free just by being a React class.
+      // In this case we're looking for the msg property inside the
+      // this.props object. We'll see how this gets set when we get
+      // to the render step.
+      // The curly brackets inside the tag let React know there's
+      // an expression that needs to be evaluated: in this case,
+      // the lookup of our property. React puts the results of the
+      // expression in the tag and then returns it to the renderer.
+      render: function() {
+        return <h1>{ this.props.msg }</h1>;
+      },
+      // What if we ask for a property that doesn't exist on the
+      // this.props object? The getDefaultProps method returns an
+      // object with pre-populated properties (say that 5 times fast)
+      // which will only be used if the renderer does not supply
+      // for a specific property itself.
+      getDefaultProps: function() {
+        return {
+          msg: "React is cool!"
+        };
+      }
+    });
+
+    // Here we're rendering a Note and passing a message along
+    // in the msg attribute. The value we pass in will be rendered
+    // into the bulletinboard1 div.
+    React.render(
+      <Note msg="React is flexible!" />,
+      document.getElementById('bulletinboard1')
+    );
+
+    // Here we're not passing an msg property, so the default value
+    // will be used. The bulletinboard2 div will display "React is cool!"
+    React.render(
+      <Note />,
+      document.getElementById('bulletinboard2')
+    );
+
+    // We can render copies of our component into as many different
+    // places on our page as we like, just like regular HTML tags.
+  </script>
+</body>
+</html>
