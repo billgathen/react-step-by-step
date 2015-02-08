@@ -36,26 +36,25 @@
           ]
         }
       },
-      // Now we're using Note components as part of the output of this
-      // component. Note that when we pass the msg attribute, there
-      // are no quotes around it!
-      //
-      // Note how we're using the curly brackets to apply more-complex
-      // logic to our build step.
-      //
       // To generate all our Note components, we map each element in
       // the notes array into a Note component, then let JSX
       // construct the unordered list. To allow React to identify the
       // each li element separately, we pass it a unique key attribute.
       // 
       render: function() {
-        // We create a simple function to convert a single message
+        // Let's create a simple function to convert a single message
         // 
         var toLineItem = function(msg, idx) {
           return <li key={ "idx-" + idx }><Note msg={ msg } /></li>;
         };
-        // 
-        // ...and then use it when we map all the messages into actual components
+        // Notice we used Note components as part of the output of this
+        // component, just like it was a regular HTML tag.
+        //
+        // Also note that when we pass the value of the
+        // msg attribute, we use curly brackets instead of quotes,
+        // since it's an expression (something to be evaluated) and not a string.
+        //        
+        // We can use our function when we map all the messages into actual components
         // 
         return <ul>{ this.state.notes.map(toLineItem) }</ul>;
       }

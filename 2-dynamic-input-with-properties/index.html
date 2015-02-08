@@ -9,7 +9,7 @@
     Normally we want to render components in certain spots on the page,
     not overwrite the entire body, so this time we've added two wrapper
     divs as destinations for our component.
-    
+
     We differentiate them using ids, so we can locate them later.
   -->
   <div id="bulletinboard1"></div>
@@ -23,12 +23,12 @@
     // What if we wanted a component that would display any message we
     // asked it to? React allows us to pass information into our
     // components via properties, which can be accessed via attributes
-    // in the tag, just like we set attributes like id and class in
+    // in the tag, the same way we set attributes like id and class in
     // normal HTML tags.
     // 
     var Note = React.createClass({
       // This time our render method has active content.
-      // this.props refers to the props object every class gets
+      // this.props refers to the props object every component gets
       // free just by being a React class.
       // 
       // In this case we're looking for the msg property inside the
@@ -47,7 +47,7 @@
       // this.props object? The getDefaultProps method returns an
       // object with pre-populated properties (say that 5 times fast)
       // which will only be used if the renderer does not supply
-      // for a specific property itself.
+      // a specific property itself.
       // 
       getDefaultProps: function() {
         return {
