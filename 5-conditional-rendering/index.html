@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditional Rendering</title>
+</head>
+<body>
+  <div id="question1"></div>
+  <div id="question2"></div>
+
+  <!-- The core React library -->
+  <script src="http://fb.me/react-0.12.2.js"></script>
+  <!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
+  <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+
+  <!-- 
+    Sometimes we want parts of our content to only render in certain
+    situations (perhaps we hide some niceties on mobile), or to be toggle-able.
+    React makes this easy with conditional rendering.
+  -->
+
+  <script type="text/jsx">
+    /** @jsx React.DOM **/
+
+    var FlashCard = React.createClass({
+      // To make this FlashCard reusable, we're putting the question and
+      // answer into the properties: no hardcoded values in the HTML at all.
+      //
+      // The internal state of what is displayed is dependent on the
+      // value of the this.state.visibility variable.
+      //
+      getInitialState: function() {
+        return {
+          visible: false
+        }
+      },
+      // The last line in the outer div is an expression. React will
+      // evaluate it first and then use the results in the rendering step.
+      //
+      render: function() {
+        return (
+          <div>
+            <p>
+              { this.props.question }
+              <br/>
+              <button onClick={ this.toggleAnswer }>{ this.buttonText() }</button>
+            </p>
+            { this.state.visible ? <p>{ this.props.answer }</p> : <span/> }
+          </div>
+        );
+      },
+      // This method extracts the logic around determining the state-specific
+      // text to display, cleaning up our render method
+      //
+      buttonText: function() {
+        return this.state.visible ? "Hide Answer" : "Show Answer";
+      },
+      // Just by setting the visible property to the negative of itself
+      // whenever the button is clicked,
+      // React will re-render the component and all the changes will be
+      // reflected in the new version. Nice!
+      //
+      toggleAnswer: function(e) {
+        this.setState({
+          visible: ! this.state.visible
+        });
+      }
+    });
+
+    // Since we made it completely configurable, we can have as many
+    // questions on the page as we want and they keep track of their own
+    // visibility and answers!
+    //
+    React.render(
+      <FlashCard question="What is the airspeed velocity of an unladen swallow?" answer="African or European?" />,
+      document.getElementById("question1")
+    );
+
+    React.render(
+      <FlashCard question="What is your favorite color?" answer="Blue.  No yel--  Auuuuuuuugh!" />,
+      document.getElementById("question2")
+    );
+  </script>
+</body>
+</html>

@@ -8,6 +8,7 @@ A heavily-annotated series of experimental apps as I explore the [React.js](http
 1. [Dynamic Input Using Properties](https://github.com/billgathen/react-step-by-step/tree/master/2-dynamic-input-with-properties)
 1. [Nesting Components](https://github.com/billgathen/react-step-by-step/tree/master/3-nesting-components)
 1. [Using Events](https://github.com/billgathen/react-step-by-step/tree/master/4-using-events)
+1. [Conditional Rendering](https://github.com/billgathen/react-step-by-step/tree/master/5-conditional-rendering)
 
 ## Helpful Resources
 
