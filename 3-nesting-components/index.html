@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nesting Components</title>
 </head>
 <body>
@@ -53,6 +54,11 @@
         // Also note that when we pass the value of the
         // msg attribute, we use curly brackets instead of quotes,
         // since it's an expression (something to be evaluated) and not a string.
+        // 
+        // GOTCHA Attributes we supply must be valid HTML, but also can't be
+        // JS reserved words, because they're converted to JS properties by the
+        // JSX compiler. Two valid HTML attributes overlap: for (use htmlFor)
+        // and class (use className).
         //        
         // We can use our function when we map all the messages into actual components
         // 
