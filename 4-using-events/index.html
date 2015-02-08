@@ -23,26 +23,37 @@
     // which React uses for communication. In this case, React will
     // fire the handleChange method any time the component text changes.
     //
+    // A list of all events React supports can be found at:
+    // https://facebook.github.io/react/docs/events.html
+    //
     var Echo = React.createClass({
+      getInitialState: function() {
+        return {
+          msg: ""          
+        }
+      },
       render: function() {
-        return <input type="text" onChange={this.handleChange} />;
+        return (
+          <div>
+            <input type="text" onChange={this.handleChange} />
+            <p>{ this.state.msg }</p>
+          </div>
+        );
       },
       // The method will be called with the React event as the argument, so
       // we can dig into it to get the element that was the target of
       // the event (in this case the input element), and inside that
       // to get the text inside the text box.
       //
-      // We log the complete contents of the text box to the console
-      // every time the text changes.
+      // We're using the getState function to update state for our
+      // component, which will cause the component to automatically
+      // re-render itself, keeping the paragraph in sync with the text box!
       //
       handleChange: function(e) {
-        console.log(e.target.value);
+        this.setState({
+          msg: e.target.value
+        });
       }
-      // To see the results, open the console by right-clicking the
-      // text box in the page, then selecting "Inspect Element" or
-      // whatever the equivalent is in your browser. The developer
-      // console should open and you can select the console tab.
-      //
     });
 
     React.render(
