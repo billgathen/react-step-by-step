@@ -7,6 +7,7 @@ A heavily-annotated series of experimental apps as I explore the [React.js](http
 1. [Hello World](https://github.com/billgathen/react-step-by-step/tree/master/1-hello-world)
 1. [Dynamic Input Using Properties](https://github.com/billgathen/react-step-by-step/tree/master/2-dynamic-input-with-properties)
 1. [Nesting Components](https://github.com/billgathen/react-step-by-step/tree/master/3-nesting-components)
+1. [Using Events](https://github.com/billgathen/react-step-by-step/tree/master/4-using-events)
 
 ## Helpful Resources
 
