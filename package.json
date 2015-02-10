@@ -1,0 +1,28 @@
+{
+  "name": "react-step-by-step",
+  "version": "1.0.0",
+  "description": "A heavily-annotated series of experimental apps as I explore the React.js framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/billgathen/react-step-by-step.git"
+  },
+  "keywords": [
+    "react",
+    "flux"
+  ],
+  "author": "Bill Gathen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/billgathen/react-step-by-step/issues"
+  },
+  "homepage": "https://github.com/billgathen/react-step-by-step",
+  "devDependencies": {
+    "connect": "^3.3.4",
+    "serve-static": "^1.8.1"
+  }
+}

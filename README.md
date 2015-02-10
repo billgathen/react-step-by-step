@@ -16,3 +16,14 @@ A heavily-annotated series of experimental apps as I explore the [React.js](http
 * Liam McLennan's [React Fundamentals](http://www.pluralsight.com/courses/react-fundamentals) course on [Pluralsight](http://www.pluralsight.com)
 * Hendrik Swanepoel's [video walkthrough](http://tagtree.tv/thinking-in-react) of the [Thinking in React](http://facebook.github.io/react/docs/thinking-in-react.html) blog post
 * The [JSX Compiler](https://facebook.github.io/react/jsx-compiler.html) page shows you the plain JS your JSX is translated into
+
+## Try it yourself!
+
+If you'd like to play along at home:
+
+* [Fork the repo and clone a local copy](https://help.github.com/articles/fork-a-repo/) to your machine
+* cd to the root directory
+* [Install node](http://nodejs.org/) if you don't have it already
+* ```npm install``` to install a tiny web server
+* ```npm start``` to start the web server in the current directory
+* Hit [http://localhost:3000](http://localhost:3000) in your browser
