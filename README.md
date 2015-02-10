@@ -25,6 +25,6 @@ If you'd like to play along at home:
 * [Fork the repo and clone a local copy](https://help.github.com/articles/fork-a-repo/) to your machine
 * cd to the root directory
 * [Install node](http://nodejs.org/) if you don't have it already
-* ```npm install``` to install a tiny web server
-* ```npm start``` to start the web server in the current directory
+* ```npm install``` to install a few node libraries
+* ```npm start``` to start a tiny web server in the current directory
 * Hit [http://localhost:3000](http://localhost:3000) in your browser
