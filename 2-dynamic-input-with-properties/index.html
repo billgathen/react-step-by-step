@@ -52,6 +52,20 @@
         return {
           msg: "React is cool!"
         };
+      },
+      // To help the user of our component set it up properly,
+      // we can restrict the properties passed in using the propTypes
+      // object. This is an OBJECT, not a function like the others.
+      //
+      // A list of all the options lives at:
+      // https://facebook.github.io/react/docs/reusable-components.html
+      //
+      // If we removed the default value in getDefaultProps, then
+      // the render for Note below would raise a warning in the browser
+      // console.
+      //
+      propTypes: {
+        msg: React.PropTypes.string.isRequired
       }
     });
 

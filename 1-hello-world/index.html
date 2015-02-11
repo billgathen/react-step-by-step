@@ -39,6 +39,10 @@
         // 
         // As far as the browser is concerned, we wrote it that way ourselves. 
         //
+        // One gotcha: the method can only return a single element, so if you
+        // are building something more complicated, wrap the whole thing in
+        // a container tag of some kind (divs and spans are popular).
+        //
         return <h1>Hello world from React!</h1>;
       }
     });
