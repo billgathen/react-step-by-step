@@ -17,6 +17,7 @@ var Like = React.createClass({
     //
     // Here's a list of all the DOM events React can handle:
     // https://facebook.github.io/react/docs/events.html
+    //
     // NOTE: the HTML element you're creating must send the
     // event in question or React won't know about it.
     // Putting an onChange property on a button wouldn't
@@ -24,8 +25,9 @@ var Like = React.createClass({
     //
     return <button onClick={ this._onClick }>Like</button>;
   },
-  // This method will be called every time someone clicks
+  // _onClick will be called every time someone clicks
   // our button.
+  //
   _onClick: function() {
     // To let the rest of the app know something
     // has happened, we tell the LikeActions object to

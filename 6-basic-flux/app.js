@@ -11,7 +11,7 @@ var React   = require("react");
 var Like    = require("./js/components/like.react");
 var Counter = require("./js/components/counter.react");
 
-// We require each of the components into the page just as before.
+// We render each of the components into the page just as before.
 React.render(
   <Counter />,
   document.getElementById('counter')
