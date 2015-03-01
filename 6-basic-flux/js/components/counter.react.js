@@ -1,4 +1,4 @@
-// First pull in the React library so we can use its features.
+// Pull in the React library so we can use its features.
 //
 var React = require('react');
 //
@@ -41,12 +41,12 @@ var Counter = React.createClass({
   componentDidUnmount: function() {
     LikeStore.removeChangeListener(this.onChange);
   },
-  // setState will replace the existing contents of the component's
+  // setState replaces the existing contents of the component's
   // state with whatever the store returns, then triggers an
   // automatic re-render of the component. Our updated liked count
   // should increment on the page every time we click the button!
   //
-  // NOTE: if this component had any nested components that inherit
+  // NOTE: if this component had any nested components that inherited
   // its state, those child components would automatically re-render
   // as well!
   //
@@ -54,6 +54,8 @@ var Counter = React.createClass({
     this.setState(getState());
   }
 });
+
+module.exports = Counter;
 
 // And that's Flux!
 //
@@ -63,5 +65,3 @@ var Counter = React.createClass({
 // the "receive" features of counter.react.js. To keep things as
 // clear as possible, I picked a problem that flows from A to B instead.
 //
-
-module.exports = Counter;

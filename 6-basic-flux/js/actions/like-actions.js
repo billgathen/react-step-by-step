@@ -10,7 +10,7 @@
 var Dispatcher = require('../dispatcher/dispatcher');
 //
 // Then we'll pull in the list of valid events the
-// system knows about, stored in constants. This makes
+// system knows about, stored as constants. This makes
 // sure that senders and receivers are using the exact
 // same terminology when referring to events. If
 // we just used plain strings to identify them, the
@@ -25,8 +25,15 @@ var Constants = require('../constants/constants');
 // at least an actionType property. The value of that
 // property tells the dispatcher what event to send.
 //
-// If there was any data to pass along with this event,
-// we'd supply it as property name/value pairs on the
+var LikeActions = {
+  liked: function() {
+    Dispatcher.dispatch({
+      actionType: Constants.LIKED
+    });
+  }
+};
+// If there's any data to pass along with an event,
+// we supply it as property name/value pairs on the
 // object, like this:
 //
 // var BankActions = {
@@ -39,17 +46,9 @@ var Constants = require('../constants/constants');
 //   }
 // };
 //
-var LikeActions = {
-  liked: function() {
-    Dispatcher.dispatch({
-      actionType: Constants.LIKED
-    });
-  }
-};
-
-// There's surprisingly-little to see in either the constants
-// or the dispatcher (though you're welcome to look!), so
-// head over to js/stores/like-store.js to see how stores
-// register with the dispatcher to receive these events!
 
 module.exports = LikeActions;
+
+// The constants file is just a hash, so you can take a peek
+// if you like, but our next stop is js/dispatcher/dispatcher.js
+// to find out how these "dispatches" are passed-along.

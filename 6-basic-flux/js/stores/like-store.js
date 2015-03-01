@@ -30,10 +30,12 @@ var assign = require('object-assign');
 //
 var CHANGE_EVENT = 'change';
 
-// This is our like counter.
+// This is our like counter. Our entire app is devoted to maintaining and
+// displaying this variable.
+//
 var _likes = 0;
 
-// Our actual object. Notice the use of assign and EventEmitter.prototype
+// Our store object. Notice the use of assign and EventEmitter.prototype
 // to "mix-in" the event-generating behavior.
 //
 var LikeStore = assign({}, EventEmitter.prototype, {
@@ -44,13 +46,13 @@ var LikeStore = assign({}, EventEmitter.prototype, {
   likes: function() {
     return _likes;
   },
-  // The method the view uses to tell the store what code to run
+  // The method the view will call to tell the store what code to run
   // when an event fires
   //
   addChangeListener: function(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  // The method the view uses to stop listening to this store's events.
+  // The method the view will call to stop listening to this store's events.
   //
   removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
@@ -67,12 +69,8 @@ var LikeStore = assign({}, EventEmitter.prototype, {
 });
 
 // The store registers with the dispatcher to be alerted whenever ANY
-// events come through it. The switch statement allows it to act on
+// events come through. The switch statement allows it to act on
 // any events it cares about, while ignoring the rest.
-//
-// This is an important design principle: the dispatcher alerts every
-// store about every event. It doesn't filter them in any way. The
-// stores are responsible for deciding which events they care about
 //
 Dispatcher.register(function(action){
   switch(action.actionType) {
@@ -89,6 +87,6 @@ Dispatcher.register(function(action){
 // need to attach our Counter element to this store so it can update
 // itself when the store updates.
 //
-// That code lives in js/components/counter.react.js
+// The final stop in our journey is js/components/counter.react.js
 
 module.exports = LikeStore;

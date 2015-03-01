@@ -2,17 +2,17 @@
 
 ## What is Flux?
 
-[Flux](http://facebook.github.io/flux) is the design pattern Facebook uses to handle data flow and interaction within a React app. Flux is (mostly) event-driven and its defining characteristic is that data flows in one direction through the app. We chain events (or actions) together so components find out about the actions they care about and can take whatever steps they need to in response.
+[Flux](http://facebook.github.io/flux) is the design pattern Facebook uses to handle data flow and interaction within a React app. Flux is (mostly) event-driven and its defining characteristic is that data flows in one direction through the app. We chain events (or actions) together so components find out about the actions they care about and can react (pun intended) appropriately.
 
-The example app tracks "likes" for a web page, and we'll use Flux to let the display counter know when someone has clicked the "like" button.
+Our example app tracks "likes" for a web page, and we'll use Flux to let the display counter know when someone has clicked the "like" button.
 
 ## The Challenges
 
-I found Flux **much** more difficult to wrap my head around than React alone. None of the explanations made sense to me. In fact, until I walked through the code in the [Flux TodoMVC example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc), I was ready to give up. I hope this repo will be the guide you need to pick up Flux quickly and begin using it in your own apps.
+I found Flux **much** more difficult to wrap my head around than React alone. None of the explanations made sense to me. Until I walked through the code in the [Flux TodoMVC example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc), I was ready to give up. I hope this repo will be the guide you need to pick up Flux quickly and begin using it in your own apps.
 
-Flux uses CommonJS ```require``` statements to pull in behaviors from other files, so we'll switch from *all in one file* mode to *how apps are really built* mode. This means we'll stop compiling our JSX in the browser: instead we'll add a build tool at the command-line and pre-compile before serving. The [Browserify](http://browserify.org) tool will gather and combine all our code files into a single file that lives at ```dist/bundle.js```. This is much more efficient and how all production apps operate, but it's complexity I wanted to avoid as long as possible in these examples.
+Flux uses CommonJS ```require``` statements to pull in behaviors from other files, so we'll switch from *all in one file* mode to *how apps are really built* mode. This means we'll stop compiling our JSX in the browser: instead we'll add a build tool at the command-line and pre-compile before serving. The [Browserify](http://browserify.org) tool will gather and combine all our code files into a single file that lives at ```dist/bundle.js```. Pre-compiling is more efficient and all production apps use it, but it's added complexity I wanted to avoid as long as possible in these examples.
 
-Underneath this directory are two directories: ```js``` and ```dist```. The ```js``` directory contains another series of directories: ```actions```, ```components```, ```constants```, ```dispatcher``` and ```stores```. These are where we'll put our React/Flux app code. The ```dist``` directory is where our build step will put the compiled application file: ```bundle.js```. You can see in ```index.html``` that ```dist/bundle.js``` is the only script file we need to include for our app to load into the page. Convenient!
+Underneath this directory are two sub-directories: ```js``` and ```dist```. The ```js``` directory contains the directories where we'll put our React/Flux code: ```actions```, ```components```, ```constants```, ```dispatcher``` and ```stores```. The ```dist``` directory is where our build step will put the compiled application file: ```bundle.js```. You can see in ```index.html``` that ```dist/bundle.js``` is the only script file we need to include for our app to load into the page. Convenient!
 
 The good news is you can ignore the build steps entirely if all you want to do is run the code: the ```dist/bundle.js``` file has already been created. Open ```index.html``` in a browser and it just works!
 
@@ -20,7 +20,7 @@ The good news is you can ignore the build steps entirely if all you want to do i
 
 I've laid out a recommended flow for going through the source code which follows Flux's one-directional data flow. **If you don't follow it, you'll likely be as lost as I was.** That flow is:
 
-* ```index.html``` (the page our app lives in)
+* [```index.html```](index.html) (the page containing our app)
 * ```app.js``` (the main app file)
 * ```js/components/like.react.js``` (the like button React component)
 * ```js/actions/like-actions.js``` (connecting the button component to the dispatcher)
@@ -33,7 +33,7 @@ Have fun!
 
 ## If You Want To Experiment
 
-If you make changes to the code, you'll need to re-run the build process to see your changes in the browser. If you don't have Node installed on your dev machine, follow the instructions [here](http://nodejs.org) to do that first. Then execute the following from the command-line in this directory:
+When you make changes to the code, you'll need to re-run the build process and refresh the page to see your changes in the browser. If you don't have Node installed on your dev machine, follow the instructions [here](http://nodejs.org) to do that first. Then execute the following from the command-line in this directory:
 
 * ```npm install```
 * ```npm install browserify -g```

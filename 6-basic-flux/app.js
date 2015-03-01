@@ -8,6 +8,14 @@
 //
 var React   = require("react");
 // Our own React components go in the components directory.
+// Notice we start with a ./ so Browserify knows to start
+// in this directory when looking for our files, but we
+// can leave off the .js.
+//
+// We didn't need a path to the React library, because
+// it was installed in the node_modules directory by NPM
+// and Browserify automatically checks for files there.
+//
 var Like    = require("./js/components/like.react");
 var Counter = require("./js/components/counter.react");
 
