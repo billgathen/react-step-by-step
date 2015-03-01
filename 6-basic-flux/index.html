@@ -11,55 +11,17 @@
   <script src="dist/bundle.js"></script>
 
   <!-- 
-    Flux is the design pattern Facebook uses to handle data flow and
-    interaction within a React app. Flux is event-driven and its defining
-    characteristic is that data flows in one direction through the app.
-    We chain events (or actions) together so things find out about the
-    actions they care about and can take whatever action they need to
-    as a result.
 
-    This app will be a component that tracks "likes" on a web page,
-    and we'll use Flux to let the display counter know that someone has
-    clicked the "like" button.
+    Notice that even though we've written our code in multiple files in
+    different directories, the only one we need to include in our page is
+    the dist/bundle.js file our build process created.
 
-    Flux uses CommonJS "require" statements to pull in behaviors, so we'll
-    switch from "all in one file" mode to "how apps are really built" mode.
-    This means we'll stop compiling our JSX in the browser: instead we'll
-    add a build tool at the command-line and pre-compile before serving.
-    This is much more efficient and how all production apps operate.
-
-    In the directory that contains this file are a js dir and a dist dir.
-    In the js directory you'll see another series of directories: actions,
-    components, constants, dispatcher and stores. These are where we'll put
-    our React/Flux app code. The dist directory is where our build step will
-    put the compiled application file: bundle.js. You can see above that
-    dist/bundle.js is the only script file we need to include for our app
-    to load into this page.
-
-    Ready to start?
+    The "counter" and "like" divs are where our React components will install
+    themselves.
 
     To see how data flows through a Flux app, start in app.js. The comments
     will guide you through the flow.
 
-    BUILDING THE CODE YOURSELF
-
-    If you make changes to the code, you'll need to run the build process
-    to see your changes in the browser. Execute the following from the
-    command-line in the directory that contains this file:
-
-      npm install
-      npm install browserify -g
-      npm run build
-
-    The 'npm install' steps only have to be run once, to gather all the
-    required JavaScript packages from the NPM repository.
-
-    If it complains it can't find npm, you need to install Node first.
-    Go to http://nodejs.org for instructions.
-
-    To see how the build process works, look in the package.json file under
-    the "scripts" property. We use a tool called Browserify to pull in all
-    the files and combine them into a single bundle.js file.
   -->
 </body>
 </html>
