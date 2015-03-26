@@ -1,10 +1,8 @@
-// Our dispatcher is just a simple pass-through to Flux's
+// Our dispatcher is a simple pass-through to Flux's
 // own dispatcher. There's actually no custom code here.
 //
-// In fact, I'm pretty sure you could eliminate this file
-// entirely and make actions and stores both refer to the
-// Flux dispatcher directly, but I wanted someplace to
-// talk about it. :)
+// It's just a central location for creating a single instance of
+// the dispatcher to be used by the rest of the app.
 //
 var Dispatcher = require('flux').Dispatcher;
 
