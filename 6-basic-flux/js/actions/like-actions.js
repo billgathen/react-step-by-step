@@ -37,10 +37,10 @@ var LikeActions = {
 // object, like this:
 //
 // var BankActions = {
-//   deposit: function(_account_number, _amount) {
+//   deposit: function(_accountNumber, _amount) {
 //     Dispatcher.dispatch({
 //       actionType: Constants.DEPOSIT,
-//       account_number: _account_number,
+//       accountNumber: _accountNumber,
 //       amount: _amount
 //     });
 //   }
