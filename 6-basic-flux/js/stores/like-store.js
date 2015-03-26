@@ -36,7 +36,7 @@ var CHANGE_EVENT = 'change';
 var _likes = 0;
 
 // Our store object. Notice the use of assign and EventEmitter.prototype
-// to "mix-in" the event-generating behavior.
+// to "mix-in" the event-generating behavior to an empty JS object.
 //
 var LikeStore = assign({}, EventEmitter.prototype, {
   // The read-only method the view uses to get the number of likes.
@@ -46,13 +46,13 @@ var LikeStore = assign({}, EventEmitter.prototype, {
   likes: function() {
     return _likes;
   },
-  // The method the view will call to tell the store what code to run
+  // The method the <Counter /> element will call to tell the store what code to run
   // when an event fires
   //
   addChangeListener: function(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  // The method the view will call to stop listening to this store's events.
+  // The method the <Counter /> element will call to stop listening to this store's events.
   //
   removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
@@ -84,7 +84,7 @@ Dispatcher.register(function(action){
 });
 
 // Now that the store know whenever an event has occurred, we only
-// need to attach our Counter element to this store so it can update
+// need to attach our <Counter /> element to this store so it can update
 // itself when the store updates.
 //
 // The final stop in our journey is js/components/counter.react.js
