@@ -10,6 +10,7 @@ A heavily-annotated series of experimental apps as I explore the [React.js](http
 1. [Using Events](https://github.com/billgathen/react-step-by-step/tree/master/4-using-events)
 1. [Conditional Rendering](https://github.com/billgathen/react-step-by-step/tree/master/5-conditional-rendering)
 1. [Basic Flux](https://github.com/billgathen/react-step-by-step/tree/master/6-basic-flux)
+1. [Supporting Multiple Views with React Router](https://github.com/billgathen/react-step-by-step/tree/master/7-react-router)
 
 ## Helpful Resources
 
