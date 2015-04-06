@@ -12,7 +12,7 @@ var Link         = Router.Link;
 var Route        = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
-// This element contains all content that's shared
+// This element contains any content we want shared
 // across all our routes.
 //
 var App = React.createClass({
