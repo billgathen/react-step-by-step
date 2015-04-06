@@ -20,7 +20,7 @@ A heavily-annotated series of experimental apps as I explore the [React.js](http
 * Egghead.io's [React Fundamentals](https://egghead.io/series/react-fundamentals)
 * The [JSX Compiler](https://facebook.github.io/react/jsx-compiler.html) page shows you the plain JS your JSX is translated into
 * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) Chrome plugin: shows you the virtual DOM that React creates with your components! So cool.
-* The [Flux TodoMVC example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc). I went half-a-dozen explanation of Flux, but couldn't wrap my head around it. Walking through the code in this repo finally cleared it up for me.
+* The [Flux TodoMVC example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc). I read half-a-dozen explanations of Flux and still couldn't wrap my head around it. Walking through the code in this repo finally cleared it up for me.
 
 ## Try it yourself!
 
