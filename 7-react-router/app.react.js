@@ -96,5 +96,5 @@ var routes = (
 // or share, linking directly to any route in our app.
 //
 Router.run(routes, function(Handler) {
-  React.render(<Handler />, document.body);
+  React.render(<Handler />, document.getElementById('my-react-app'));
 });

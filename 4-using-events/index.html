@@ -6,6 +6,8 @@
   <title>Using Events</title>
 </head>
 <body>
+  <div id="my-react-app"></div>
+
   <!-- The core React library -->
   <script src="http://fb.me/react-0.12.2.js"></script>
   <!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
@@ -56,7 +58,7 @@
 
     React.render(
       <Echo />,
-      document.body
+      document.getElementById('my-react-app')
     );
   </script>
 </body>

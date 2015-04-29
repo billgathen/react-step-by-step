@@ -6,6 +6,8 @@
   <title>Hello World in React</title>
 </head>
 <body>
+  <div id="my-react-app"></div>
+
   <!-- The core React library -->
   <script src="http://fb.me/react-0.12.2.js"></script>
   <!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
@@ -49,19 +51,18 @@
 
     // Now that we have a component, we need to tell React to render (aka display)
     // it on the page. React.render takes two args: the JSX for the component
-    // we want displayed, followed by the DOM wrapper element where we want the
-    // component inserted.
+    // we want displayed, followed by the DOM wrapper element we want to insert the
+    // component into.
     //
-    // Here we're inserting it into the document body itself, but you can use
-    // document.getElementById and similar methods to grab whatever element
-    // you want.
+    // We're using document.getElementById to locate the element, but you can use
+    // any location method you like to tell React where it should live.
     //
     // Notice that the JSX name of our new component matches the class we
     // created above, including the capital H.
     //
     React.render(
       <Hello />,
-      document.body
+      document.getElementById('my-react-app')
     );
 
     // If you open this file in a web browser, the JSXTransformer library
